@@ -6,7 +6,6 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
-// Set defaults
 AParkourCharacter::AParkourCharacter()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -28,17 +27,15 @@ AParkourCharacter::AParkourCharacter()
 
 void AParkourCharacter::BeginPlay()
 {
-	// Call base class  
+	 
+
 	Super::BeginPlay();
 
 
-	// Add input mapping context
 	if(APlayerController* PlayerController = Cast<APlayerController>(Controller))
 	{
-		// Get local player subsystem
 		if(UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
 		{
-			// Add input context
 			Subsystem->AddMappingContext(InputMapping, 0);
 		}
 	}
@@ -80,14 +77,12 @@ void AParkourCharacter::Move(const FInputActionValue &InputValue)
 
 	if (IsValid(Controller))
 	{
-		// Get direction
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
 
 		const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
-		// Add input
 		AddMovementInput(ForwardDirection, InputVector.Y);
 		AddMovementInput(RightDirection, InputVector.X);
 	}
@@ -107,11 +102,11 @@ void AParkourCharacter::Look(const FInputActionValue &InputValue)
 	}
 }
 
+
 void AParkourCharacter::Jump()
 {
 	ACharacter::Jump();
 }
-
 
 
 void AParkourCharacter::StartSprint()

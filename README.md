@@ -1,10 +1,13 @@
-# ue5-locomotion-project
-Locomotion and movement system project setup
+## Parkour locomotion and movement system in UE5
+### features
 ```
-Imported UE5 mannequin models and ALSv4 animations (retargeted)
-Set up enhanced input code and input actions/mapping context
-Walk, run and sprint speeds + jump
-1st + 3rd person views
-Temporary state machine for idle and run (Adding blendspaces later)
-+Other basic project setup
+3 speeds - walk, run, sprint
+8-direction locomotion
+crouch and air-born states
+wall run
+slide
+vault
+dynamic footstep warping on slopes
+turning in place
++more
 ```

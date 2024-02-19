@@ -17,8 +17,6 @@ class AParkourCharacter : public ACharacter
 	class USpringArmComponent* SpringArm;
 
 protected:
-
-	// Expose a mapping context
 	UPROPERTY(EditAnywhere, Category = "EnhancedInput")
 	class UInputMappingContext* InputMapping;
 
@@ -50,10 +48,7 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	
 
 protected:
 
@@ -61,7 +56,6 @@ protected:
 	void Look(const FInputActionValue& InputValue);
 	void Jump();
 
-	
 	void StartSprint();
 	void EndSprint();
 
