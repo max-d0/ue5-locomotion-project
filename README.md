@@ -1,13 +1,12 @@
-## Parkour locomotion and movement system in UE5
+## parkour locomotion and movement system in UE5
 ### features
 ```
-3 speeds - walk, run, sprint
-8-direction locomotion
-crouch and air-born states
+8-directional walk+run
 wall run
-slide
 vault
+slide
 dynamic footstep warping on slopes
 turning in place
+dynamic camera
 +more
 ```
