@@ -10,12 +10,7 @@ class AParkourCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-	UPROPERTY(VisibleAnywhere, meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* Camera;
-
-	UPROPERTY(VisibleAnywhere, meta = (AllowPrivateAccess = "true"))
-	class USpringArmComponent* SpringArm;
-
+	
 protected:
 	UPROPERTY(EditAnywhere, Category = "EnhancedInput")
 	class UInputMappingContext* InputMapping;
@@ -61,7 +56,6 @@ protected:
 
 	void StartWalk();
 	void EndWalk();
-	
 
 	UPROPERTY(EditAnywhere, Category = "Basic Movement")
 	float WalkSpeed;
