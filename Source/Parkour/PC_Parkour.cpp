@@ -1,4 +1,5 @@
 #include "PC_Parkour.h"
+#include "ParkourCharacter.h"
 
 void APC_Parkour::OnPossess(APawn* aPawn)
 {

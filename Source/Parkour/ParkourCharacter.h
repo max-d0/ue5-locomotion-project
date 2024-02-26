@@ -34,9 +34,8 @@ public:
 
 	AParkourCharacter();
 
-void NewFunction();
-
 protected:
+
 virtual void BeginPlay() override;
 
 public:
@@ -50,19 +49,6 @@ protected:
 	void Move(const FInputActionValue& InputValue);
 	void Look(const FInputActionValue& InputValue);
 	void Jump();
-
-	void StartSprint();
-	void EndSprint();
-
-	void StartWalk();
-	void EndWalk();
-
-	UPROPERTY(EditAnywhere, Category = "Basic Movement")
-	float WalkSpeed;
-	UPROPERTY(EditAnywhere, Category = "Basic Movement")
-	float RunSpeed;
-	UPROPERTY(EditAnywhere, Category = "Basic Movement")
-	float SprintSpeed;
 
 };
 

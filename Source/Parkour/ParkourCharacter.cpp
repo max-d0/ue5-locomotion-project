@@ -48,14 +48,7 @@ void AParkourCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 		Input->BindAction(LookAction, ETriggerEvent::Triggered, this, &AParkourCharacter::Look);
 
 		Input->BindAction(JumpAction, ETriggerEvent::Triggered, this, &AParkourCharacter::Jump);
-
-
-		Input->BindAction(SprintAction, ETriggerEvent::Triggered, this, &AParkourCharacter::StartSprint);
-		Input->BindAction(SprintAction, ETriggerEvent::Completed, this, &AParkourCharacter::EndSprint);
-
-		Input->BindAction(WalkAction, ETriggerEvent::Triggered, this, &AParkourCharacter::StartWalk);
-		Input->BindAction(WalkAction, ETriggerEvent::Completed, this, &AParkourCharacter::EndWalk);
-
+	
 	}
 }
 
@@ -75,8 +68,6 @@ void AParkourCharacter::Move(const FInputActionValue &InputValue)
 		AddMovementInput(RightDirection, InputVector.X);
 	}
 
-	GetCharacterMovement()->MaxWalkSpeed = RunSpeed;
-
 }
 
 void AParkourCharacter::Look(const FInputActionValue &InputValue)
@@ -90,30 +81,7 @@ void AParkourCharacter::Look(const FInputActionValue &InputValue)
 	}
 }
 
-
 void AParkourCharacter::Jump()
 {
 	ACharacter::Jump();
-}
-
-
-void AParkourCharacter::StartSprint()
-{
-	GetCharacterMovement()->MaxWalkSpeed = SprintSpeed;
-}
-
-void AParkourCharacter::EndSprint()
-{
-	GetCharacterMovement()->MaxWalkSpeed = RunSpeed;
-}
-
-
-void AParkourCharacter::StartWalk()
-{
-	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
-}
-
-void AParkourCharacter::EndWalk()
-{
-	GetCharacterMovement()->MaxWalkSpeed = RunSpeed;
 }
