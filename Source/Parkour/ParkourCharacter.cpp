@@ -2,26 +2,14 @@
 #include "InputMappingContext.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include "Math/UnrealMathUtility.h"
 #include "Camera/CameraComponent.h"
-#include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
 AParkourCharacter::AParkourCharacter()
 {
+
 	PrimaryActorTick.bCanEverTick = true;
-
-	SpringArm = CreateDefaultSubobject<USpringArmComponent>("Spring Arm");
-	SpringArm->SetupAttachment(RootComponent);
-	SpringArm->bUsePawnControlRotation = true;
-
-	Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
-	Camera->SetupAttachment(SpringArm);
-	// (Test code)
-	// Camera->bUsePawnControlRotation = true;
-	
-	bUseControllerRotationYaw = true;
-	// (Test code)
-	// GetCharacterMovement()->bOrientRotationToMovement = true;
 
 }
 
